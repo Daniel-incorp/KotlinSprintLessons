@@ -1,5 +1,6 @@
 package lesson_1
 
 fun main() {
-    print("Here should be refactored code:)")
+    val numberOfOrders = 75
+    val thanksForOrderText = "Thank you for your order"
 }
