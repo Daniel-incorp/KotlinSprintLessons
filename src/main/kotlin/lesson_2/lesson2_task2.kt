@@ -2,13 +2,16 @@ package lesson_2
 
 fun main() {
     val employees = 50
-    val interns = 20
-    val salaryForEmployees = 50000.00f
-    val salaryForInterns = 20000.00f
+    val interns = 30
+    val salaryForEmployee = 50000
+    val salaryForIntern = 20000
+    val salaryForAllEmployees  = employees * salaryForEmployee
+    val salaryForAll = employees * salaryForEmployee + interns * salaryForIntern
+    val averageSalary = (employees * salaryForEmployee + interns * salaryForIntern)  / (employees + interns)
 
     println(
-        "\nВыплата постоянным сотрудникам: ${employees * salaryForEmployees} рублей" +
-        "\nОбщие расходы ЗП: ${employees * salaryForEmployees + interns * salaryForInterns} рублей" +
-        "\nСредняя ЗП сотрудника: ${(employees * salaryForEmployees + interns * salaryForInterns)  /(employees + interns)} рублей"
+        "Выплата постоянным сотрудникам: $salaryForAllEmployees рублей\n" +
+        "Общие расходы ЗП: $salaryForAll рублей\n" +
+        "Средняя ЗП сотрудника: $averageSalary рублей"
     )
 }
