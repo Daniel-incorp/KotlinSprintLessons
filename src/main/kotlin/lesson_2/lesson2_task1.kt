@@ -8,6 +8,5 @@ fun main() {
     val numberOfStudents = 4
     val averageRating = (firstStudentMark + secondStudentMark + thirdStudentMark + fourthStudentMark) / numberOfStudents
 
-
-    println(String.format("%nСредний балл студентов: %.2f", averageRating))
+    println("Средний балл студентов: %.2f".format(averageRating))
 }
