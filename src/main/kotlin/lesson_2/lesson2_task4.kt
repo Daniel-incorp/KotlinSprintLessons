@@ -7,7 +7,7 @@ fun main() {
     val crystalBuffed = (crystalOre * BUFF - crystalOre) - (crystalOre * BUFF - crystalOre) % 1
     val ironBuffed = (ironOre * BUFF - ironOre) - (ironOre * BUFF - ironOre) % 1
 
-    println(String.format("\nС помощью бафа были получены дополнительные:\n%.0f ед. кристальной руды\n%.0f ед. железной руды",
+    println("С помощью бафа были получены дополнительные:\n%.0f ед. кристальной руды\n%.0f ед. железной руды".format(
         crystalBuffed,
         ironBuffed
     ))
