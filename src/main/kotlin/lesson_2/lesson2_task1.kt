@@ -1,7 +1,12 @@
 package lesson_2
 
 fun main() {
-    val result = (3+4+3+5)/4.00f
+    val firstStudentMark = 3f
+    val secondStudentMark = 4f
+    val thirdStudentMark = 3f
+    val fourthStudentMark = 5f
+    val numberOfStudents = 4
+    val averageRating = (firstStudentMark + secondStudentMark + thirdStudentMark + fourthStudentMark) / numberOfStudents
 
-    println("\n$result")
+    println("Средний балл студентов: %.2f".format(averageRating))
 }
