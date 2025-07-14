@@ -1,14 +1,12 @@
 package lesson_2
-const val BUFF = 1.2f
+const val BUFF = 20f
 
 fun main() {
     val crystalOre = 7
     val ironOre = 11
-    val crystalBuffed = (crystalOre * BUFF - crystalOre) - (crystalOre * BUFF - crystalOre) % 1
-    val ironBuffed = (ironOre * BUFF - ironOre) - (ironOre * BUFF - ironOre) % 1
+    val percentBuff = BUFF / 100
+    val crystalBuffed = (crystalOre * percentBuff).toInt()
+    val ironBuffed = (ironOre * percentBuff).toInt()
 
-    println("С помощью бафа были получены дополнительные:\n%.0f ед. кристальной руды\n%.0f ед. железной руды".format(
-        crystalBuffed,
-        ironBuffed
-    ))
+    println("С помощью бафа были получены дополнительные: \n$crystalBuffed ед. кристальной руды \n$ironBuffed ед. железной руды")
 }
