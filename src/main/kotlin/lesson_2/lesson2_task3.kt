@@ -1,6 +1,5 @@
 package lesson_2
 
-
 const val MINUTES_IN_HOUR = 60
 
 fun main() {
