@@ -7,28 +7,13 @@ const val VOLUME = 100
 fun main() {
     var weightOfLuggage = 20
     var volumeOfLuggage = 80
-//  Не было бы лучше отдельно записать вычисления в переменную, а в принте просто вывести её?
-//  var average = (MIN_WEIGHT < weightOfLuggage && weightOfLuggage <= MAX_WEIGHT) && volumeOfLuggage < VOLUME
+    var average = weightOfLuggage > MIN_WEIGHT && weightOfLuggage <= MAX_WEIGHT && volumeOfLuggage < VOLUME
 
-//  println("Груз с весом $weightOfLuggage кг и объемом $volumeOfLuggage л соответствует категории 'Average': $average")
-    println(
-        "Груз с весом $weightOfLuggage кг и объемом $volumeOfLuggage л соответствует категории 'Average': ${
-            !(weightOfLuggage <= MIN_WEIGHT) && 
-            weightOfLuggage <= MAX_WEIGHT && 
-            volumeOfLuggage < VOLUME
-        }"
-    )
+    println("Груз с весом $weightOfLuggage кг и объемом $volumeOfLuggage л соответствует категории 'Average': $average")
 
     weightOfLuggage = 50
     volumeOfLuggage = 100
-//  average = (MIN_WEIGHT < weightOfLuggage && weightOfLuggage <= MAX_WEIGHT) && volumeOfLuggage < VOLUME
+    average = weightOfLuggage > MIN_WEIGHT && weightOfLuggage <= MAX_WEIGHT && volumeOfLuggage < VOLUME
 
-//  println("Груз с весом $weightOfLuggage кг и объемом $volumeOfLuggage л соответствует категории 'Average': $average")
-    println(
-        "Груз с весом $weightOfLuggage кг и объемом $volumeOfLuggage л соответствует категории 'Average': ${
-            !(weightOfLuggage <= MIN_WEIGHT) &&
-            weightOfLuggage <= MAX_WEIGHT && 
-            volumeOfLuggage < VOLUME
-        }"
-    )
+    println("Груз с весом $weightOfLuggage кг и объемом $volumeOfLuggage л соответствует категории 'Average': $average")
 }
