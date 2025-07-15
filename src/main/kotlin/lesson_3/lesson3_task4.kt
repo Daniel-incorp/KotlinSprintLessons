@@ -1,21 +1,16 @@
 package lesson_3
 
 fun main() {
-    /*
-    Помню в отборе в Школу Мобильной Разработки(ШМР) пол года назад была алгоритмическая задача
-    с шахматами и координатами, но, к сожалению, я не прошёл, т.к. на тот момент я совершенно не умел решать
-    алгосы, сейчас только-только более менее стал понимать, как решать задачки лёгкого уровня, среднего уровня, пока
-    очень туго идут, но главное, что идут!))
-    */
+
     var startMove = "E2"
     var endMove = "E4"
     var counterMove = 1
 
-    println("Ход чёрных: $startMove-$endMove,$counterMove")
+    println("Ход чёрных: [$startMove-$endMove;$counterMove]")
 
     startMove = "D2"
     endMove = "D3"
     counterMove++
 
-    println("Ход белых: $startMove-$endMove,$counterMove")
+    println("Ход белых: [$startMove-$endMove;$counterMove]")
 }
