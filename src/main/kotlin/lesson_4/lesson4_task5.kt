@@ -24,8 +24,7 @@ fun main() {
     val mainDepartureOption =
             !isDamaged &&
             numberOfPeople in MIN_NUMBER_OF_PEOPLE..MAX_NUMBER_OF_PEOPLE &&
-            numberOfProvisionBoxes > MIN_NUMBER_OF_PROVISION_BOXES ||
-            alternativeDepartureOption
+            numberOfProvisionBoxes > MIN_NUMBER_OF_PROVISION_BOXES
 
-    println("\nМожет ли корабль отправиться в плавание? $mainDepartureOption")
+    println("\nМожет ли корабль отправиться в плавание? ${mainDepartureOption || alternativeDepartureOption}")
 }
