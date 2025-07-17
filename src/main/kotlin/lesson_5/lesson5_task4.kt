@@ -5,24 +5,13 @@ const val USER_PASSWORD_REGISTERED = "PanGalactic"
 
 fun main() {
     print("Введите ваше имя пользователя: ")
-    var userName = readln()
+    val userName = readln()
 
-    print("Введите ваш пароль: ")
-    var userPassword = readln()
+    if (userName == USER_NAME_REGISTERED) {
+        print("Введите ваш пароль: ")
+        val userPassword = readln()
 
-    if (userName == USER_NAME_REGISTERED && userPassword == USER_PASSWORD_REGISTERED) print("Добро пожаловать на корабль")
-    else {
-        print("Вы не зарегистрированы. Зарегистрироваться? ")
-        val userAnswer = readln().toBoolean()
-
-        if (userAnswer) {
-            print("Введите ваше имя пользователя: ")
-            userName = readln()
-
-            print("Введите ваш пароль: ")
-            userPassword = readln()
-
-            print("Добро пожаловать на корабль")
-        } else return
-    }
+        if (userPassword == USER_PASSWORD_REGISTERED) println("Добро пожаловать на корабль!")
+        else println("Пароль неверный!")
+    } else println("Вы не зарегистрированы. Зарегистрироваться?")
 }
