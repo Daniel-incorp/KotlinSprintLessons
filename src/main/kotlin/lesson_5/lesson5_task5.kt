@@ -7,45 +7,28 @@ const val TWO_NUMBERS_WIN = 2
 const val ONE_NUMBER_WINS = 1
 
 fun main() {
+    var userInput: Int
     val userListNumbers = mutableListOf<Int>()
-    val luckyListNumbers = mutableListOf<Int>()
-    val firstLuckyNumber = (MIN_LUCKY_NUMBER..MAX_LUCKY_NUMBER).random()
-    val secondLuckyNumber = (MIN_LUCKY_NUMBER..MAX_LUCKY_NUMBER).random()
-    val thirdLuckyNumber = (MIN_LUCKY_NUMBER..MAX_LUCKY_NUMBER).random()
+    val luckyListNumbers = List(3) { (MIN_LUCKY_NUMBER..MAX_LUCKY_NUMBER).random() }
 
-    luckyListNumbers.add(firstLuckyNumber)
-    luckyListNumbers.add(secondLuckyNumber)
-    luckyListNumbers.add(thirdLuckyNumber)
-//    println(luckyListNumbers)
+    repeat(3) {
+        print("Введите число от 0 до 42: ")
+        userInput = readln().toInt()
+        userListNumbers.add(userInput)
+    }
 
-    print("Введите первое число от 0 до 42: ")
-    val firstUserInput = readln().toInt()
+    val uniqueListGuessedNumbers = luckyListNumbers.intersect(userListNumbers)
 
-    print("Введите второе число от 0 до 42: ")
-    val secondUserInput = readln().toInt()
+    for (i in userListNumbers.indices) {
+        if (userListNumbers[i] !in MIN_LUCKY_NUMBER..MAX_LUCKY_NUMBER)
+            return println("Пожалуйста вводите числа от 0 до 42")
+    }
 
-    print("Введите третье число от 0 до 42: ")
-    val thirdUserInput = readln().toInt()
-
-    userListNumbers.add(firstUserInput)
-    userListNumbers.add(secondUserInput)
-    userListNumbers.add(thirdUserInput)
-//    println(userListNumbers)
-
-    val sizeOfListGuessedNumbers = luckyListNumbers.intersect(userListNumbers)
-
-    if (
-        firstUserInput in MIN_LUCKY_NUMBER..MAX_LUCKY_NUMBER &&
-        secondUserInput in MIN_LUCKY_NUMBER..MAX_LUCKY_NUMBER &&
-        thirdUserInput in MIN_LUCKY_NUMBER..MAX_LUCKY_NUMBER
-    ) {
-        when (sizeOfListGuessedNumbers.size) {
-            THREE_NUMBERS_WIN -> println("Поздравляем, вы угадали все три числа и выиграли джекпот")
-            TWO_NUMBERS_WIN -> println("Поздравляем, вы угадали два числа из трёх и выиграли крупный приз")
-            ONE_NUMBER_WINS -> println("Поздравляем, вы угадали одно число из трёх и выиграли утешительный приз")
-            else -> println("К сожалению вы не угадали ни одного числа")
-        }
-    } else println("Пожалуйста вводите числа от 0 до 42")
-
+    when (uniqueListGuessedNumbers.size) {
+        THREE_NUMBERS_WIN -> println("Поздравляем, вы угадали все три числа и выиграли джекпот")
+        TWO_NUMBERS_WIN -> println("Поздравляем, вы угадали два числа из трёх и выиграли крупный приз")
+        ONE_NUMBER_WINS -> println("Поздравляем, вы угадали одно число из трёх и выиграли утешительный приз")
+        else -> println("К сожалению вы не угадали ни одного числа")
+    }
     println(luckyListNumbers)
 }
