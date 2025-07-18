@@ -17,10 +17,10 @@ fun main() {
         bodyMassIndex < NOT_NORMAL_BODY_WEIGHT ->
             println("Недостаточная масса тела: %.02f".format(bodyMassIndex))
 
-        bodyMassIndex >= NOT_NORMAL_BODY_WEIGHT && bodyMassIndex < NORMAL_BODY_WEIGHT ->
+        bodyMassIndex < NORMAL_BODY_WEIGHT ->
             println("Нормальная масса тела: %.02f".format(bodyMassIndex))
 
-        bodyMassIndex >= NORMAL_BODY_WEIGHT && bodyMassIndex < OVER_NORMAL_BODY_WEIGHT ->
+        bodyMassIndex < OVER_NORMAL_BODY_WEIGHT ->
             println("Избыточная масса тела: %.02f".format(bodyMassIndex))
 
         else -> println("Ожирение: %.02f".format(bodyMassIndex))
